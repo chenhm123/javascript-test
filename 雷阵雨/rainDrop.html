@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>雨滴效果</title>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<button id="btn">雷阵雨</button>
+	<button id="btn2">雨停</button>
+<script>
+	var Rain = (function(){
+
+		var winWidth = $(document).width(),
+			winHeight = $(document).height(),
+			timer = null;
+
+
+		var $div = $("<div style='width:13px;height:13px;position:fixed;top:-13px'><img src='dew-icon.png'></div>");
+
+		function RainDrop(){
+
+			$div.appendTo('body');
+
+			var stX = reRandom(0,winWidth),
+				posStart = {
+					left:stX
+				},
+				posEnd = {
+					left:stX+reRandom(-50,50),
+					top:winHeight
+				};
+
+			$div.css(posStart);
+
+			$div.animate(posEnd,1000,function(){
+				$(this).remove();
+			});
+		};
+
+		function start(){
+			alert(winWidth);
+			timer = setInterval(RainDrop,100);
+		}
+
+		function end(){
+			clearInterval(timer);
+		}
+
+		function reRandom(lowValue,highValue){
+			var choice=highValue-lowValue+1;
+				return Math.floor(Math.random()*choice+lowValue);
+		}
+
+		return{
+			start:start,
+			end
+		}
+
+	})();
+
+	$('#btn').on("click",function(){
+		Rain.start();
+	});
+</script>
+</body>
+</html>

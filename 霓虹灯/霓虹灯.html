@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://js.jirengu.com
+
+Copyright (c) 2015 by anonymous (http://js.jirengu.com/varazavuso/6/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[add your bin description]" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  
+<style id="jsbin-css">
+HTML { overflow-x:hidden; overflow-y:hidden; }
+body { padding:0; margin:0; background-color:#fff;
+}
+.box { float: left; height: 20px; width: 20px; color: #FFF; background-color: #000;opacity:50; border-radius:100px;
+}
+</style>
+</head>
+<body>
+<script id="jsbin-javascript">
+var e = 0;
+function appendBox(){
+  var mainwidth = $(window).width();
+  var mainheight = $(window).height();
+  var n = mainwidth*mainheight/410;
+  $("body").empty();
+  for(i=0;i<n;i++){
+    var $box = $("<div class='box'></div>");
+    $("body").append($box);
+  }
+}
+function boxflash(){
+  function randomColor(){
+    var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+	var strHex = "#";
+    var index;
+    for(var i =0;i<6;i++){
+      index = Math.round(Math.random()*15);
+      strHex +=arrHex[index];
+    }
+    return strHex;
+  }
+  var t = $('div').length;
+  var e = Math.round((Math.random()*t+1));
+  console.log(e);
+  var c = randomColor();
+  $('div').eq(e).css({background:c}).animate({opacity:0},1000);
+}
+$(function(){
+  appendBox();
+    boxflash();
+    setInterval(boxflash,1000);
+//   $('div').eq(2).css({background:"red"}).animate({opacity:0},1000);
+});
+</script>
+</body>
+</html>
