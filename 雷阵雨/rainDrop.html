@@ -15,9 +15,10 @@
 			timer = null;
 
 
-		var $div = $("<div style='width:13px;height:13px;position:fixed;top:-13px'><img src='dew-icon.png'></div>");
 
 		function RainDrop(){
+			
+			var $div = $("<div style='width:13px;height:13px;position:fixed;top:-13px'><img src='dew-icon.png'></div>");
 
 			$div.appendTo('body');
 
@@ -38,7 +39,6 @@
 		};
 
 		function start(){
-			alert(winWidth);
 			timer = setInterval(RainDrop,100);
 		}
 
@@ -53,13 +53,16 @@
 
 		return{
 			start:start,
-			end
+			end:end
 		}
 
 	})();
 
 	$('#btn').on("click",function(){
 		Rain.start();
+	});
+	$('#btn2').on('click',function(){
+		Rain.end();
 	});
 </script>
 </body>

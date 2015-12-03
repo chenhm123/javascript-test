@@ -92,65 +92,67 @@ Released under the MIT license: http://jsbin.mit-license.org
     </div>
     <script id="jsbin-javascript">
     var Carousel = {
-    curIdx:0,
-    init:function($ct){
-    this.$ct = $ct;
-    this.$panels = $ct.find('.content li');
-    this.$footerLi = $ct.find('.footer li');
-    this.$pre = $ct.find('.btn-pre');
-    this.$next = $ct.find('.btn-next');
-    this.bind();
-    this.autoPlay();
-    },
-    bind:function(){},
-    gotoPre:function(){},
-    gotoNext:function(){},
-    gotoPage:function(){},
-    autoPlay:function(){},
-    stopPlay:function(){}
+	   	curIdx:0,
+	    init:function($ct){
+    	    this.$ct = $ct;
+    	    this.$panels = $ct.find('.content li');
+    	    this.$footerLi = $ct.find('.footer li');
+    	    this.$pre = $ct.find('.btn-pre');
+    	    this.$next = $ct.find('.btn-next');
+    	    this.bind();
+    	    this.autoPlay();
+	    },
+	    bind:function(){},
+	    gotoPre:function(){},
+	    gotoNext:function(){},
+	    gotoPage:function(){},
+	    autoPlay:function(){},
+	    stopPlay:function(){}
     };
     var curIdx = 0,
-    len = $('.carousel .content li').length,
-    clock;
+        len = $('.carousel .content li').length,
+        clock;
     $('.carousel .btn-pre').on('click',function(){
-    gotoPre();
+   		gotoPre();
     });
     $('.carousel .btn-next').on('click',function(){
-    gotoNext();
+   		gotoNext();
     });
     $('.carousel .footer li').on('click',function(){
-    var idx = $(this).index();
-    gotoPage(idx);
+   		var idx = $(this).index();
+ 	    gotoPage(idx);
     });
     autoPlay();
     function gotoPre(){
-    var pre = (len+curIdx-1)%len;
-    gotoPage(pre);
+        var pre = (len+curIdx-1)%len;
+        gotoPage(pre);
     }
     function gotoNext(){
-    var next = (curIdx+1)%len;
-    gotoPage(next);
+        var next = (curIdx+1)%len;
+        gotoPage(next);
     }
     function gotoPage(idx){
-    stopPlay();
-    var $cur = $('.carousel .content li').eq(idx),
-    $other = $('.carousel .content li.active');
-    $other.fadeOut(400,function(){
-    $cur.fadeIn().addClass('active');
-    $other.removeClass('active');
-    });
-    $('.carousel .footer li').removeClass('active').eq(idx).addClass('active');
-    if(clock){
-    autoPlay()
-    }
+        console.log(idx);
+        stopPlay();
+        var $cur = $('.carousel .content li').eq(idx),
+            $other = $('.carousel .content li.active');
+        $other.fadeOut(400,function(){
+            $cur.fadeIn().addClass('active');
+            $other.removeClass('active');
+            curIdx = idx;
+        });
+        $('.carousel .footer li').removeClass('active').eq(idx).addClass('active');
+        if(clock){
+            autoPlay()
+        }
     }
     function autoPlay(){
-    clock = setInterval(function(){
-    gotoNext();
-    },3000);
+        clock = setInterval(function(){
+            gotoNext();
+        },3000);
     }
     function stopPlay(){
-    clearInterval(clock);
+        clearInterval(clock);
     }
     </script>
   </body>
