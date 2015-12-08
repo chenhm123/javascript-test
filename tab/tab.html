@@ -39,7 +39,7 @@
 </ul>	
 <script>
 	
-	$('.title').on('click','li',function(e){
+	$('.title').on('mouseenter','li',function(e){
 	  $li = $(e.currentTarget).addClass('active');
 	  $li.siblings().removeClass('active');
 	  var index = $('.title').children().index($li);
