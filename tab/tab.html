@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+.title>li{
+  display:inline-block;
+}
+.title>li{
+  width:50px;
+  background:red;
+}
+.content>li.active{
+  display:block;
+}
+
+.content>li{
+  display:none;
+  height:300px;
+  width:400px;
+  background:green;
+}
+.title>li.active{
+  background:blue;
+}
+</style>
+</head>
+<body>
+<ul class="title">
+  <li class="active"><span>头1<span></li>
+  <li>头2</li>
+  <li>头3</li>
+</ul>
+<ul class="content">
+  <li class="active">内容1</li>
+  <li>内容2</li>
+  <li>内容3</li>
+</ul>	
+<script>
+	
+	$('.title').on('click','li',function(e){
+	  $li = $(e.currentTarget).addClass('active');
+	  $li.siblings().removeClass('active');
+	  var index = $('.title').children().index($li);
+	  console.log(index);   
+	  $('.content').children().eq(index).addClass('active').siblings().removeClass('active');
+	});
+</script>
+</body>
+</html>
