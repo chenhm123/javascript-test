@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js"></script>
+</head>
+<body>
+	<script>
+	requirejs.config({
+		baseUrl:"js"
+	});
+
+	//加载入口模块
+	requirejs(['amd-main'])
+	console.log('start...')
+	</script>
+</body>
+</html>
