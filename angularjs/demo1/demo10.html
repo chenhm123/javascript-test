@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+<div ng-controller="myProviderCtrl">
+    <div>
+        {{artist}}
+    </div>
+    <div>
+        {{thingFromConfig}}
+    </div>
+</div>
+<div ng-controller="myFactory">
+    <div>
+        {{artist}}
+    </div>
+</div>
+<div ng-controller="myServiceCtrl">
+    <div>
+        {{artist}}
+    </div>
+</div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('myProviderCtrl',function($scope,myProvider){
+        $scope.artist = myProvider.getArtist();
+        $scope.thingFromConfig = myProvider.thingOnConfig;
+    })
+    myApp.provider('myProvider',function(){
+        this._artist = 'artist';
+        this.thingFromConfig = 'thingfromConfigff';
+
+        this.$get = function(){
+            var that = this;
+            return {
+                getArtist:function(){
+                    return that._artist;
+                },
+                thingOnConfig:that.thingFromConfig
+            }
+        }
+    })
+    myApp.config(function(myProviderProvider){
+        myProviderProvider.thingFromConfig = "fffff"
+    })
+    //Factory
+    myApp.controller('myFactory',function($scope,myFactory){
+        $scope.artist = myFactory.getArtist();
+    })
+    myApp.factory('myFactory',function(){
+        var _artist = 'factory';
+        var service = {};
+
+        service.getArtist = function(){
+            return _artist;
+        }
+
+        return service;
+
+    })
+
+    myApp.controller('myServiceCtrl',function($scope,myService){
+        $scope.artist = myService.getArtist();
+    })
+    myApp.service('myService',function(){
+        var _artist = "service";
+        this.getArtist = function(){
+            return _artist;
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+    <style>
+        .red{background: mediumvioletred;}
+        .yellow{background: greenyellow}
+    </style>
+</head>
+<body>
+<div ng-controller="Aaa">
+    <div ng-class="{yellow:true}">{{text}}</div>
+    <div ng-class="{red:true}">{{text}}</div>
+    <div ng-class="{{sClass}}">{{text}}</div>
+    <div ng-style="{{style}}">{{text}}</div>
+    <a ng-href="{{url}}">aaaa</a>
+    <a ng-attr-href="{{url}}" ng-attr-title="{{text}}" ng-attr-style="">aaaa</a>
+    <div ng-style="{{style}}" ng-show="Btn">{{text}}</div>
+    <div ng-style="{{style}}" ng-if="Btn">{{text}}</div>
+    <div ng-switch on="Btn">
+        <p ng-switch-default>default</p>
+        <p ng-switch-when="false">case1</p>
+    </div>
+    <details ng-open="Btn">
+        <summary>Copyright 2011</summary>
+        <p>All pages and graphice on this web site are the property of W3school</p>
+    </details>
+</div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('Aaa',['$scope',function($scope){
+        $scope.text = "hello";
+        $scope.style = "{color:'red',background:'yellow'}";
+        $scope.sClass = "{red:true,yellow:true}";
+        $scope.url = "http://www.baidu.com";
+        $scope.Btn = true;
+    }])
+</script>
+</body>
+</html>

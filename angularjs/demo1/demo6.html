@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+<div ng-controller="Ctrl">
+    <input ng-value="data1"><br>
+    <input ng-blur="blur='失去焦点'">{{blur}}<br>
+    <input ng-keydown="change='改变了'" ng-model="data2">{{change}}<br>
+    <input type="checkbox" ng-checked="true" ng-disabled="true"><br>
+    <input ng-mousedown="change='鼠标点下'" ng-model="data2">{{change}}<br>
+    <input ng-mouseenter="change='鼠标移入'" ng-model="data2">{{change}}<br>
+    <input ng-mouseleave="change='鼠标移chu'" ng-model="data2">{{change}}<br>
+    <input ng-mousemove="change='鼠标move'" ng-model="data2">{{change}}<br>
+
+
+
+</div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('Ctrl',function($scope){
+        $scope.data1 = "data1";
+
+    })
+</script>
+</body>
+</html>

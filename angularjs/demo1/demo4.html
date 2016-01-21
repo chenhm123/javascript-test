@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+    <div ng-init="list = ['Chrome','Firefox','IE']">
+        <input ng-model="list" ng-list/><br/>
+        <input ng-model="list" ng-list/><br/>
+        <pre>list={{list}}</pre><br/>
+        <ol>
+            <li ng-repeat="item in list">
+                {{item}}
+            </li>
+        </ol>
+    </div>
+    <div ng-controller="Ctrl">
+        {{age}}
+        {{name}}
+        {{sex}}
+    </div>
+    <div ng-controller="Ctrl2">
+        {{age}}
+        {{name}}
+    </div>
+    <div ng-controller="Ctrl3">
+        <input ng-model="money"/>
+        <input ng-model="num">
+        <p>费用: <span>{{sum()}}</span></p>
+        <p>综合: <span>{{total}}</span></p>
+    </div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('Ctrl',['$scope','$rootScope','$timeout',function($scope,$rootScope,$timeout){
+        $scope.name = "chm";
+        $rootScope.age = 23;
+        $timeout(function(){
+
+                $scope.name = changeName($scope.name);
+
+        },2000);
+        function changeName(name){
+            return name+"123";
+        }
+    }]);
+    myApp.controller('Ctrl2',['$scope','$rootScope',function($scope,$rootScope){
+
+    }]);
+    myApp.run(['$rootScope',function($rootScope){
+        $rootScope.sex = 'girl';
+    }]);
+    myApp.controller('Ctrl3',['$scope',function($scope){
+        $scope.sum = function(){
+            return $scope.money*$scope.num||0;
+        }
+        $scope.$watch($scope.sum,function(newValue,oldValue){
+            console.log(newValue);
+            console.log(oldValue);
+            $scope.total = newValue>10? 10:20;
+        })
+
+    }]);
+</script>
+</body>
+</html>

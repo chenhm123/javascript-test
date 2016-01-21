@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body ng-controller="xxx">
+<p>{{data1|uppercase}}</p>
+<p>{{data1|lowercase}}</p>
+<p>{{{foo:"bar",baz:"23"}|json}}</p>
+<p>{{1304375948024|date}}</p>
+<p>{{1304375948024|date:"MM/dd/yyyy @h:mma"}}</p>
+<p>{{1304375948024|date:"yyyy-MM-dd hh:mm:ss"}}</p>
+<p>{{1.234567|number:2}}</p>
+<p>{{1234567|number}}</p>
+<p>{{250|currency}}</p>
+<p>{{250|currency:"RMB￥"}}</p>
+<!--<p>{{[{'name':'chm',age:22},{'name':'chenhm',age:24}]|filter:{'name':'chm'}}}</p>-->
+<div ng-init="myArr = [{name:'Tom', age:20}, {name:'Tom Senior', age:50}, {name:'May', age:21}, {name:'Jack', age:20}, {name:'Alice', age:22}]">
+<div ng-repeat="u in myArr | filter:{age: 21} ">
+<p>Name:{{u.name}}</p>
+<p>Age:{{u.age}}</p>
+<br />
+</div>
+</div>
+<hr/>
+
+<ul>
+    <li ng-repeat="p in person">
+        姓名：{{p.name}}
+        年龄：{{p.age}}
+    </li>
+</ul>
+<ul>
+    <li ng-repeat="x in names | orderBy:'country'">
+        {{x.name + "," +x.country}}
+    </li>
+</ul>
+
+<p><input type="text" ng-model="name"/></p>
+<ul>
+    <li ng-repeat="x in names | filter:name | orderBy:'country'">
+        {{x.name + "," +x.country}}
+    </li>
+</ul>
+{{str|replaceHello:2:5}}
+
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('xxx',function($scope){
+        $scope.data1 = "sldfkjsSDFASFklfSDFADFd;askfasdlkf";
+        $scope.money = "123";
+        $scope.userInfo = [{'name':'chm',age:22},{'name':'chenhm',age:24}];
+
+        $scope.person = [
+            {name:'zs',age:23},
+            {name:'ls',age:22}
+        ];
+        $scope.names = [
+            {name:'js',country:'nd'},
+            {name:'java',country:'dd'},
+            {country:'dd'}
+        ];
+        $scope.str = 'HelloWorld';
+    })
+    myApp.filter('replaceHello',function(){
+        return function(input,num,type){
+            console.log(input);
+            console.log(num);
+            console.log(type);
+            return input.replace(/Hello/,"你好");
+        }
+    })
+</script>
+</body>
+</html>

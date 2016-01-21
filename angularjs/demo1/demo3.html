@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="MyCtrl">
+        Hello {{name}}
+        <button ng-click="action()">
+            OK
+        </button>
+    </div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyCtrl',function($scope){
+        $scope.name = "OK";
+        $scope.action = function(){
+            $scope.name = "World";
+        }
+    })
+</script>
+</body>
+</html>

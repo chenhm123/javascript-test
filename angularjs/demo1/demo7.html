@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="firstController">
+        <input type="button" ng-value="text" ng-disabled="isDisabled"/>
+        <input type="text" value="{{text}}" ng-readonly="isDisabled"/>
+        <input type="checkbox" ng-value="text" ng-checked="isDisabled"/>
+    </div>
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('firstController',function($scope,$interval){
+        var isNow = 5;
+        $scope.text = isNow + "秒";
+        $scope.isDisabled = true;
+
+        var time = $interval(function(){
+            $scope.text = --isNow + "秒";
+            if(isNow===0){
+                $interval.cancel(time);
+                $scope.text = "可以点击了";
+                $scope.isDisabled = false;
+            }
+        },1000)
+    })
+</script>
+</body>
+</html>
