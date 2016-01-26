@@ -11,14 +11,33 @@
         <button ng-click="action()">
             OK
         </button>
+
+        {{age}}
+
+        <input ng-model='name' type='text'/>
+        <div>change count: {{count}}</div>
+
     </div>
 <script>
     var myApp = angular.module('myApp', []);
     myApp.controller('MyCtrl',function($scope){
-        $scope.name = "OK";
         $scope.action = function(){
             $scope.name = "World";
         }
+
+        $scope.age = 23;
+
+        setTimeout(function(){
+            $scope.$apply(function(){
+                $scope.age = 24;
+            })
+        },1000)
+
+        $scope.count = 0;
+        $scope.name = 'ccc';
+        $scope.$watch('age',function(){
+            $scope.count++;
+        })
     })
 </script>
 </body>

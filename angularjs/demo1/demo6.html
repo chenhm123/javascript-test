@@ -15,7 +15,8 @@
     <input ng-mouseenter="change='鼠标移入'" ng-model="data2">{{change}}<br>
     <input ng-mouseleave="change='鼠标移chu'" ng-model="data2">{{change}}<br>
     <input ng-mousemove="change='鼠标move'" ng-model="data2">{{change}}<br>
-
+    <button ng-click="test()"></button>
+    <input type="text" ng-model="data3"/>
 
 
 </div>
@@ -23,7 +24,9 @@
     var myApp = angular.module('myApp', []);
     myApp.controller('Ctrl',function($scope){
         $scope.data1 = "data1";
-
+        $scope.test = function(){
+            alert($scope.data3);
+        }
     })
 </script>
 </body>

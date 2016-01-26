@@ -1,0 +1,27 @@
+*{padding:0;margin: 0;text-decoration: none;list-style: none;font-family: "微软雅黑";font-size: 18px;}
+body{padding: 5px;}
+.clearfix:after{content: "";display: block;clear: both;}
+.header{text-align: center;}
+.customer-info>.three-td{width: 100%}
+.customer-info>.three-td tr>th{text-align: left;font-weight: normal;}
+.customer-info>.three-td tr>td{margin-right: 20px;}
+.customer-info>.four-td{width: 100%}
+.customer-info>.four-td tr>th{text-align: left;font-weight: normal;}
+.customer-info>.four-td tr>.right-th{text-align: right;}
+.first-notice,.second-notice,.third-notice{border:1px solid black;overflow: hidden;margin-top: 10px;padding: 5px;margin-bottom: 10px;}
+.first-notice>div,.second-notice>div,.third-notice>div{float:left;width: 50%;box-sizing:border-box;padding-right: 15px;}
+.quickCheck>div{display: inline-block;}
+.quickCheck>div:first-child{width: 15px;margin-left:10px;position: relative;top: -20px}
+.quickCheck>div:nth-child(2){width: 80%}
+.second-notice{border:1px solid black;overflow: hidden;margin-top: 10px;padding: 5px;margin-bottom: 10px;}
+.footer>div{border:1px solid black;}
+.footer>div:first-child{border-bottom: 0;}
+.footer>.pay-way{padding: 5px 10px;}
+.footer>.pay-way>div{float:left;width: 50%;box-sizing:border-box;}
+.footer>.pay-way>.sign>.sign-img>*{display: inline-block;}
+.footer>.pay-way>.sign>.sign-img>img{border-bottom: 1px solid black;}
+.footer>.other-info>div{display: inline-block;vertical-align: top}
+.footer>.other-info>.remark{width: 10%;}
+.footer>.other-info>.remark-content{width: 30%;}
+.footer>.other-info>.hotel{width: 27%;}
+.footer>.other-info>.last-info{width: 30%;margin-top: 30px;}

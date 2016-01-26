@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>其他设置</title>
+</head>
+<body style="margin: 0px;padding: 0px;">
+<div id="sysNorth"  class="easyui-layout" style="width:100%;height:450px;">
+    <div  data-options="region:'center',iconCls:'icon-reload'" title="<a href='javascript:XrmpPortal.ydt.Sys.getLoadState()' style='text-decoration:none;color:black'>刷新</a>"  style="height:240px;padding:10px;">
+        <div style="float:left;">
+            <div id="todoTask" class="easyui-panel" title="系统设置"
+                 style="width:371px;height:200px;padding:10px;float:left;" data-options="collapsible:true">
+                <form id="sys_session">
+                    <table>
+                        <tr>
+                            <td style="text-align: right;">设备session过期时间：</td>
+                            <td><input id="devSession" name="devSession" type="text" value="$!devSession"/></td>
+                            <td>分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">网站session过期时间：</td>
+                            <td><input id="webSession" name="webSession" type="text" value=""/></td>
+                            <td>分钟</td>
+                        </tr>
+                    </table>
+                </form>
+                <div style="margin-left:250px;margin-top:50px;"><input type="button" value="保存" onClick="javascript:XrmpPortal.ydt.Sys.saveSession()"/></div>
+            </div>
+        </div>
+        <div style="margin-left:381px;">
+            <div id="webConnect" class="easyui-panel" title="APP数据设置"
+                 style="width:371px;height:200px;padding:10px;" data-options="collapsible:true">
+                <form id="sys_days">
+                    <table>
+                        <tr>
+                            <td style="text-align: right;">客房可用房最长天数：</td>
+                            <td><input type="text" value="" name="typeRsvDays" id="typeRsvDays" /></td>
+                            <td>天</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">营业数据走势图最长天数:</td>
+                            <td><input type="text" value="" name="queryDays" id="queryDays" /></td>
+                            <td>天</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">是否包含不确定预订:</td>
+                            <td>
+                                <select name="tentative" id="tentative">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">数据保留小数位数:</td>
+                            <td>
+                                <input  name="decimal" id="decimal" value="">位
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" value="保存" onClick="javascript:XrmpPortal.ydt.Sys.saveDays()"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="panel">
+            <!-- <div id="sysImage" class="easyui-panel" title="欢迎和登录LOGO上传"
+                style="width:750px;height:190px;padding:10px;" data-options="collapsible:true" >
+              <iframe id="imgFrame" src="sysImage" width="1070px" height="200px" frameBorder="0" marginheight="0" marginwidth="0" scrolling="auto" ></iframe>
+            </div>   -->
+            <form id="hotel_fm" method="post" action="uploadSysImage"
+                  onsubmit="return Upload.checkUpload('uploadPath');" enctype="multipart/form-data">
+                <input name="uploadFileName" id="uploadFileName" type="hidden" value=""/>
+                <table>
+                    <tr>
+                        <td  style="text-align: right;font-size:12px;">图片:</td>
+                        <td> <input type="file" name="uploadFile" id="uploadPath"  onchange="Upload.getFileName()"></td>
+                    </tr>
+                    <tr>
+                        <td  style="text-align: right;">图片类型:</td>
+                        <td>
+                            <select id="type" name="type">
+                                <option value="w">欢迎图片</option>
+                                <option value="l">酒店登录</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  style="text-align: right;"></td>
+                        <td><input type="submit" value="上传"  style="width:50px;" ></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="resource/js/ydt/sysmaintain/sys.js"></script>
+<script src="resource/js/ydt/common.js"></script>
+<script type="text/javascript" src="resource/js/common/upload.js"></script>
+<script type="text/javascript">
+    $(function(){
+        XrmpPortal.ydt.Sys.getLoadState();
+        //$('#sysNorth').layout('panel', 'center').panel({title:"<a href='javascript:Sys.getLoadState()'>刷新</a>"});
+    })
+</script>
+
+</body>
+</html>	

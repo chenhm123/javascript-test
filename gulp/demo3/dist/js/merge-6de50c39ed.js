@@ -1,0 +1,1 @@
+function template(t,e){var n=/{{[a-zA-Z$_][a-zA-Z0-9\.]*/g;return t.replace(n,function(t,n,r,o){for(var a=n.split("."),l=e;a.length>0;)l=l[a.shift()];return l||t})}function test(){console.log("test")}

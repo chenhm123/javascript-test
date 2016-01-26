@@ -1,0 +1,195 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: "Î¢ÈíÑÅºÚ"
+}
+
+body {
+	padding: 2px;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.header {
+	padding: 0 20px 10px;
+}
+
+.header>div {
+	float: left;
+}
+
+.header>.room-info {
+	width: 45%;
+}
+
+.room-info>table {
+	margin-left: 7px;
+	font-size: 18px
+}
+
+.room-info>table tr>td:nth-child(2) {
+	padding-left: 10px;
+}
+
+.room-info>p {
+	font-size: 16px;
+}
+
+.header:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.header>.hotel-info {
+	width: 25%;
+	font-size: 20px;
+	margin-left: 40px;
+	word-break:break-word;
+}
+
+.header>.hotel-logo {
+	padding: 0;
+	text-align: center;
+	float:right;
+	margin-top: 20px;
+
+}
+
+.header>.hotel-logo>img {
+	border: 0;
+	width: 155px;
+	height:150px;
+}
+
+.first-table>p {
+	font-size: 18px;
+}
+
+.first-table>table {
+	width: 98%;
+	margin-bottom: 10px;
+	border-collapse: collapse;
+}
+
+.first-table>table tr {
+	border-bottom: 1px solid rgb(122, 122, 122);
+}
+
+.first-table>table td {
+	border: 0;
+	padding: 2px 0 2px 5px;
+	width: 12.5%;
+	word-break:break-word;
+}
+
+.first-table>table td span,.second-table>table td span {
+	font-size: 20px;
+}
+
+.first-table>table td .table-logo {
+	width: 50px;
+	margin-top: 5px;
+}
+
+.first-table>table .table-title>p {
+	text-align: right;
+	font-weight: bold;
+	margin-right: 20px;
+	letter-spacing: 1.1px;
+	font-size: 22px;
+}
+
+.first-table table .wrap {
+	display: inline-block;
+	margin-right: 1px;
+}
+
+.first-table table .wrap .next-line {
+	display: block;
+}
+
+.second-table {
+	margin-top: 10px;
+}
+
+.second-table>table {
+	width: 98%;
+	border-collapse: collapse;
+	font-size: 18px;
+	text-align: center;
+}
+
+.second-table>table td {
+	width: 16%;
+	word-break:break-word;
+}
+
+.second-table>table>tbody>tr:first-child>td {
+	border: 0;
+}
+
+.second-table>table>tbody>tr>td.left-border {
+	border-left: 1px solid black;
+}
+
+.second-table>table .payway {
+	text-align: left;
+	font-size: 16px;
+	margin-left: 5px
+}
+
+.second-table>table .payment {
+	margin-top: 20px;
+}
+
+.second-table>table .payment .wrap {
+	display: inline-block;
+	width: 22%;
+}
+
+.second-table>table .payment .next-line {
+	display: block;
+}
+
+.second-table>table .info {
+	float: left;
+	width: 35%;
+	text-align: left;
+	font-size: 20px;
+	padding: 10px 0 0 10px;
+}
+
+.second-table>table .warn {
+	margin-left: 30px;
+	width: 60%;
+	float: left;
+	text-align: left;
+	padding-top: 10px;
+}
+
+.second-table>table .sign {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.second-table>table .sign img{
+	width:200px;
+}
+
+#footer .info>p {
+	word-break: break-all;
+}
+
+.second-table>table .sign>div {
+	display: inline-block;
+}
+
+#sureName, #givenName, #chnieseName, #tb2guestname, #tb2roomrate {
+	font-weight: bold;
+}
