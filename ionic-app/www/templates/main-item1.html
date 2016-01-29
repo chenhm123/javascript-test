@@ -1,0 +1,33 @@
+<ion-view title="一点通">
+    <ion-header-bar>
+        <button class="button blueWord" ng-click="go_back()"><i class="ion ion-ios-arrow-back"></i>一点通</button>
+        <h1 class="title">汇总信息</h1>
+        <button class="button blueWord">图标</button>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="selectDate">
+            日期：
+            <span ng-click="datePick()" class="energized" style="text-decoration: underline">{{todayDate|date:'yyyy-MM-dd'}}</span>
+            <button class="button button-small energized-bg" ng-click="getInfoData(todayDate)"><i class="ion ion-search"></i></button>
+        </div>
+        <hr/>
+        <ion-scroll class="item1-scroll" direction="x y">
+            <table border="1">
+                <tr>
+                    <th>info header1</th>
+                    <th>info header2</th>
+                    <th>info header3</th>
+                    <th>info header4</th>
+                    <th>info header5</th>
+                </tr>
+                <tr ng-repeat="item in tableList" >
+                    <td>{{item.info1}}</td>
+                    <td>{{item.info2}}</td>
+                    <td>{{item.info3}}</td>
+                    <td>{{item.info4}}</td>
+                    <td>{{item.info5}}</td>
+                </tr>
+            </table>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -13,15 +13,22 @@
     <div>
         {{thingFromConfig}}
     </div>
+    <div>
+        {{name}}
+    </div>
 </div>
+<hr/>
 <div ng-controller="myFactory">
     <div>
         {{artist}}
+        {{name}}
     </div>
 </div>
+<hr/>
 <div ng-controller="myServiceCtrl">
     <div>
         {{artist}}
+        {{name}}
     </div>
 </div>
 <script>
@@ -29,10 +36,12 @@
     myApp.controller('myProviderCtrl',function($scope,myProvider){
         $scope.artist = myProvider.getArtist();
         $scope.thingFromConfig = myProvider.thingOnConfig;
+        $scope.name = myProvider.name;
     })
     myApp.provider('myProvider',function(){
         this._artist = 'artist';
         this.thingFromConfig = 'thingfromConfigff';
+        this.name = 'chm';
 
         this.$get = function(){
             var that = this;
@@ -49,28 +58,33 @@
     })
     //Factory
     myApp.controller('myFactory',function($scope,myFactory){
+        $scope.name = myFactory.name;
         $scope.artist = myFactory.getArtist();
     })
     myApp.factory('myFactory',function(){
         var _artist = 'factory';
         var service = {};
+        this.name = "chm"
 
         service.getArtist = function(){
             return _artist;
         }
 
-        return service;
+        return "chm";
 
     })
 
     myApp.controller('myServiceCtrl',function($scope,myService){
+        $scope.name = myService.name;
         $scope.artist = myService.getArtist();
     })
     myApp.service('myService',function(){
+        this.name = "chm";
         var _artist = "service";
         this.getArtist = function(){
             return _artist;
         }
+        return "chm";
     })
 
 

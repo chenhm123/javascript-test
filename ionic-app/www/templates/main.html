@@ -1,0 +1,65 @@
+<ion-view hide-nav-bar="true">
+    <ion-side-menus>
+        <!-- 中间内容 -->
+        <ion-side-menu-content ng-controller="MainCtrl">
+            <ion-header-bar align-title="center" class="bar-stable">
+                <h1 class="title">一点通</h1>
+                <button class="button ic1on ion-navicon-round" ng-click="changeMenu()"></button>
+            </ion-header-bar>
+            <ion-content>
+                <div class="first-row">
+                    <div class="main-item-col main-yellow-bg" ng-style="{{colItem}}" ui-sref="main-item1">
+                        <i class="iconfont icon-block"></i>
+                        <p>汇总信息</p>
+                    </div>
+                    <div class="main-item">
+                        <div class="main-item-row balanced-bg" ng-style="{{rowItem}}">
+                            <i class="iconfont icon-dinner"></i>
+                            <p>前台信息</p>
+                        </div>
+                        <div class="main-item-row calm-bg" ng-style="{{rowItem}}">
+                            <i class="iconfont icon-tea"></i>
+                            <p>餐饮信息</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="first-row">
+                    <div class="main-item-col main-gray-bg" ng-style="{{colItem}}">
+                        <i class="iconfont icon-zhongqingdianxinicon03"></i>
+                        <p>实时指标</p>
+                    </div>
+                    <div class="main-item">
+                        <div class="main-item-row special-item">
+                            <div class="main-item-col main-purple-bg" ng-style="{{rowItem}}">1</div>
+                            <div class="main-item-col calm-bg" ng-style="{{rowItem}}">
+                                <i class="iconfont icon-circlehalf"></i>
+                                <p>可用与占用</p>
+                            </div>
+                        </div>
+                        <div class="main-item-row special-item">
+                            <div class="main-item-col main-bule-bg" ng-style="{{rowItem}}">
+                                <i class="iconfont icon-bubble"></i>
+                                <p>实时提醒</p>
+                            </div>
+                            <div class="main-item-col balanced-bg" ng-style="{{rowItem}}">
+                                <i class="iconfont icon-set"></i>
+                                <p>修改密码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-side-menu-content>
+
+        <!-- 右侧菜单 -->
+        <ion-side-menu side="right" width="110">
+            <ion-content>
+                <ion-list>
+                    <ion-item ui-sref="config">设置 <i class="icon ion-gear-a"></i></ion-item>
+                    <ion-item ui-sref="login">注销 <i class="icon ion-android-person"></i></ion-item>
+                    <ion-item ui-sref="hotelList">酒店 <i class="icon ion-arrow-swap"></i></ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>

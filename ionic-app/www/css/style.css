@@ -1,0 +1,96 @@
+/* Empty. Add your own CSS if you like */
+.logo{
+    text-align:center;
+    margin-top:20%;
+}
+.logo>img{
+    width:60%;
+}
+.bt-gear{
+    float:left;
+}
+.bt-login{
+    float:right;
+}
+.bt-login,.bt-gear{
+    width:45%;
+    border:1px solid gainsboro;
+    background:none;
+    margin-top:20px;
+    height:35px;
+    border-radius: 5px;
+}
+.first-row{
+    display:flex;
+    flex-direction: row;
+    padding:10px 10px 0;
+}
+.main-item-col{
+    flex:1;
+    margin-right:5px;
+}
+.main-item{
+    flex:2;
+}
+.main-item>.main-item-row:first-child{
+    margin-bottom: 5px;
+}
+.special-item{
+    display:flex;
+    flex-direction: row;
+}
+.special-item>div:last-child{
+    margin:0;
+}
+.main-gray-bg{
+    background:grey;
+}
+.main-purple-bg{
+    background:purple;
+}
+.main-bule-bg{
+    background:darkblue;
+}
+.main-yellow-bg{
+    background: orange;
+}
+.first-row i{
+    font-size:30px;
+    color:white;
+    position: absolute;
+    top:50%;
+    margin-top:-15px;
+    left:50%;
+    margin-left:-15px;
+}
+.first-row p{
+    position: absolute;
+    bottom:-8px;
+    left:8px;
+    color:white;
+}
+.hotel-header-bg{
+    background:ghostwhite;
+}
+.blueWord{
+    color:dodgerblue;
+}
+.selectDate{
+    padding:2% 10%;
+    height:8%;
+}
+.selectDate>button{
+    float:right;
+}
+.item1-scroll{
+    height:70%;
+    width:700px;
+}
+.item1-scroll table{
+    border-collapse: collapse;
+    text-align: center;
+}
+.item1-scroll table th,.item1-scroll table td{
+    width:100px;
+    border-bottom: 1px solid #ddd;
+}

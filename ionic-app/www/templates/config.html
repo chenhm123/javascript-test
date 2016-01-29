@@ -1,0 +1,34 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-stable">
+        <h1 class="title">设置</h1>
+        <button class="button" style="color:dodgerblue" ng-click="go_back()">完成</button>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-divider">应用信息</ion-item>
+            <ion-item>开发者：杭州西软信息技术有限公司</ion-item>
+            <ion-item>应用版本：V1.2</ion-item>
+            <ion-item>UDID：123981923817382132381</ion-item>
+
+            <ion-item class="item-divider">设置</ion-item>
+            <ion-item>IP地址：</ion-item>
+            <ion-item>端口号：</ion-item>
+            <ion-item>服务器版本：</ion-item>
+            <ion-item class="item-toggle">
+                是否显示零值数据：
+                <label class="toggle toggle-balanced">
+                    <input type="checkbox" checked>
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </ion-item>
+            <ion-item class="item-button-right">
+                数据缓存：<a class="button button-clear">清除</a>
+            </ion-item>
+            <ion-item class="item-button-right">
+                语言：<a class="button button-clear">中文</a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

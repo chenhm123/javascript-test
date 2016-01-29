@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-header-bar class="hotel-header-bg">
+        <button class="button blueWord" ui-sref="main">取消</button>
+        <button class="button blueWord" ui-sref="main">完成</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="item-input-inset">
+            <label class="item-input-wrapper">
+                <input class="light-bg" type="text" placeholder="请输入酒店名称">
+            </label>
+        </div>
+        <ion-list>
+            <ion-item class="item-radio" ng-repeat="hotel in hotelList">
+                <input type="radio" name="hotel">
+                <div class="item-content">{{hotel.name}}</div>
+                <i class="radio-icon ion-checkmark balanced"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
